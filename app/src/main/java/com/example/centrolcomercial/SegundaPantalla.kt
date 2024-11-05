@@ -21,8 +21,9 @@ class SegundaPantalla : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_segunda_pantalla)
-
+        binding = ActivitySegundaPantallaBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        val titulo = findViewById<TextView>(R.id.Titulo_comercial)
         val intent = intent
         val centros = intent.extras?.getSerializable("Centros") as Centros
         cargarRecycle(centros.listaTiendas,centros.nombre,binding.TituloComercial)
@@ -32,8 +33,7 @@ class SegundaPantalla : AppCompatActivity() {
     fun cargarRecycle(list: List<Tiendas>, nombre: String, textView : TextView){
         val managerLayout = LinearLayoutManager(this)
         val recycler = findViewById<RecyclerView>(R.id.recyclerTienda)
-
-        recycler.layoutManager = managerLayout
-        recycler.adapter = adapterTiendas(list,nombre,textView)
+        binding.recyclerTienda.layoutManager = managerLayout
+        binding.recyclerTienda.adapter = adapterTiendas(list,nombre,textView)
     }
 }

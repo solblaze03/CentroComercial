@@ -73,6 +73,10 @@ class listaCentros {
                     Tiendas(
                         nombre = "Nike Store",
                         descripcion = "Tienda especializada en productos deportivos de la marca Nike."
+                    ),
+                    Tiendas(
+                        nombre = "Zara",
+                        descripcion = "Tienda de ropa"
                     )
                 ),
                 imagen = "https://th.bing.com/th/id/R.a7fad4478feffe294708a5046f38c648?rik=uXlVM7iLehhH2w&pid=ImgRaw&r=0"
